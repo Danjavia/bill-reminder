@@ -20,10 +20,6 @@ export class HomePage {
     this.navCtrl.push(BillCreatePage);
   }
 
-  payBill(billId: string) {
-    this.billList.update(billId, { paid: true });
-  }
-
   promptPayment(billId: string) {
     let alert = this.alertCtrl.create({
       message: "Mark as paid?",
@@ -34,7 +30,7 @@ export class HomePage {
         {
           text: 'Mark as Paid',
           handler: data => {
-            this.payBill(billId);
+            this.billList.update(billId, { paid: true });
           }
         }
       ]
