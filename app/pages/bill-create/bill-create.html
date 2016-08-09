@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>BillCreate</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="bill-create">
+  <ion-item>
+    <ion-label stacked>Bill Name</ion-label>
+    <ion-input [(ngModel)]="name" type="text" placeholder="How do you identify this bill?"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Amount</ion-label>
+    <ion-input [(ngModel)]="amount" type="number" placeholder="How much will you have to pay?"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Due Date</ion-label>
+    <ion-datetime displayFormat="D MMM, YY" pickerFormat="DD MMM YYYY" [(ngModel)]="dueDate"></ion-datetime>
+  </ion-item>
+
+  <button block (click)="createBill(name, amount, dueDate)">
+    Create Event
+  </button>
+
+</ion-content>
